@@ -205,6 +205,48 @@ iframe{
 section {
   padding-top: 60px;
 }
+.price-section {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.price-title {
+  font-size: 36px;
+  font-weight: 800;
+  margin-bottom: 30px;
+}
+
+.price-box {
+  
+  display: inline-block;
+  text-align: center;
+}
+
+.price-label {
+  background-color: #d4fbe2;
+  color: #25b24a;
+  font-weight: 600;
+  padding: 10px 30px;
+  font-size: 18px;
+  border-radius: 30px;
+  margin-bottom: 20px;
+}
+
+.price-value {
+  background-color: #e6ffee;
+  color: black;
+  font-size: 32px;
+  font-weight: bold;
+  padding: 30px;
+  border-radius: 30px;
+  margin-bottom: 10px;
+}
+
+.price-note {
+  color: #25b24a;
+  font-size: 14px;
+}
+
 
 .section-main_part h1 {
   text-align: center;

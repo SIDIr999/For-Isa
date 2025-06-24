@@ -77,3 +77,31 @@ const chatId = '5643226867';
     e.preventDefault(); // если кнопка в теге <a>
     document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
   });
+  
+  document.querySelector('.prices').addEventListener('click', function(e) {
+    e.preventDefault(); // если кнопка в теге <a>
+    document.getElementById('price').scrollIntoView({ behavior: 'smooth' });
+  });
+  // backend/server.js
+const express = require("express");
+const TelegramBot = require("node-telegram-bot-api");
+
+const app = express();
+const token = process.env.BOT_TOKEN; // <-- Загружаем токен из .env
+
+const bot = new TelegramBot(token, { polling: false });
+
+app.use(express.json());
+
+app.post("/sendMessage", (req, res) => {
+  const { chatId, text } = req.body;
+
+  bot.sendMessage(chatId, text)
+    .then(() => res.send("Message sent"))
+    .catch(err => res.status(500).send("Error: " + err));
+});
+
+app.listen(3000, () => {
+  console.log("Server running on port 3000");
+});
+
